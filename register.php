@@ -6,7 +6,7 @@ $database = "assignment2";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
-$message = ""; // Variable para almacenar el mensaje
+$message = ""; 
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -34,7 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
-    // Verificar si las contraseñas son iguales
     if ($password !== $confirm_password) {
         $message = "Las contraseñas no coinciden";
     } else {
