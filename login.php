@@ -1,5 +1,5 @@
 <?php
-session_start(); // Iniciar sesión para almacenar información del usuario
+session_start();
 
 $servername = "localhost";
 $username = "root";
@@ -8,7 +8,7 @@ $database = "assignment2";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
-$message = ""; // Variable para almacenar el mensaje
+$message = ""; 
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -24,9 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $login_result = $login_query->get_result();
 
     if ($login_result->num_rows == 1) {
-        // Inicio de sesión exitoso
         $_SESSION['username'] = $username;
-        header("Location: choose.html"); // Redirigir a la página de inicio
+        header("Location: choose.html"); 
     } else {
         $message = "Credenciales incorrectas. Por favor, inténtalo de nuevo.";
     }
