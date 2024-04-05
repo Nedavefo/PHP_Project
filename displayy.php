@@ -31,7 +31,7 @@ if ($result->num_rows > 0) {
 } else {
     echo "No se encontraron imágenes.";
 }
-echo "</div>"; // Cierre del contenedor principal con barra de desplazamiento vertical
+echo "</div>"; 
 $conn->close();
 ?>
 
